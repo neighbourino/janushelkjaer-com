@@ -3,24 +3,26 @@
         $mediaItems = $article->getMedia('articles');
         $publicFullUrl = isset($mediaItems[0]) ? $mediaItems[0]->getFullUrl() : '';
     @endphp
-    <div class="-mx-8 -mt-8 z-30 relative">
-        <div>
-            <img class="h-32 w-full object-cover lg:h-48"
-                src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                alt="">
-        </div>
-        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
-                <div class="flex">
-                    <img class="size-24 rounded-full ring-4 ring-white sm:size-32"
-                        src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                        alt="">
-                </div>
-                <div class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
-                    {{-- <div class="mt-6 min-w-0 flex-1 sm:hidden md:block">
+
+    @if (1 == 2)
+        <div class="-mx-8 -mt-8 z-30 relative">
+            <div>
+                <img class="h-32 w-full object-cover lg:h-48"
+                    src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    alt="">
+            </div>
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+                    <div class="flex">
+                        <img class="size-24 rounded-full ring-4 ring-white sm:size-32"
+                            src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                            alt="">
+                    </div>
+                    <div class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+                        {{-- <div class="mt-6 min-w-0 flex-1 sm:hidden md:block">
                         <h1 class="truncate text-2xl font-bold text-gray-900">Ricardo Cooper</h1>
                     </div> --}}
-                    {{-- <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
+                        {{-- <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
                         <button type="button"
                             class="inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                             <svg class="-ml-0.5 mr-1.5 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
@@ -43,13 +45,14 @@
                             <span>Call</span>
                         </button>
                     </div> --}}
+                    </div>
+                </div>
+                <div class="mt-6 hidden min-w-0 flex-1 sm:block md:hidden">
+                    <h1 class="truncate text-2xl font-bold text-gray-900">Ricardo Cooper</h1>
                 </div>
             </div>
-            <div class="mt-6 hidden min-w-0 flex-1 sm:block md:hidden">
-                <h1 class="truncate text-2xl font-bold text-gray-900">Ricardo Cooper</h1>
-            </div>
         </div>
-    </div>
+    @endif
 
 
     <div class="overflow-hidden bg-white py-24 sm:py-32">
@@ -57,7 +60,7 @@
             <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
                 <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
                     <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-                        <h2 class="text-base/7 font-semibold text-yellow-600">Deploy faster</h2>
+                        <h2 class="text-base/7 font-semibold text-yellow-00">Deploy faster</h2>
                         <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                             {{ $article->title }}</h1>
                         <p class="mt-6 text-lg/8 text-gray-600">{{ $article->intro }}

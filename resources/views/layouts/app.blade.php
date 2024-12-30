@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -33,7 +34,7 @@
             name="{{ config('app.name', 'Laravel') }}" class="max-lg:!hidden hidden dark:flex" href="/" />
 
         <flux:navbar class="-mb-px max-lg:hidden">
-            <flux:navbar.item href="#">About</flux:navbar.item>
+            <flux:navbar.item href="{{ route('pages.about') }}">About</flux:navbar.item>
 
             <flux:navbar.item href="{{ route('articles.index') }}">Articles</flux:navbar.item>
             <flux:navbar.item href="#">Projects</flux:navbar.item>
@@ -116,7 +117,7 @@
     <flux:main container class="bg-white dark:bg-zinc-900 border-l border-r border-zinc-100 dark:border-zinc-700">
         {{ $slot }}
 
-        <footer class="bg-white">
+        <footer class="bg-white mt-24">
             <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
                 <nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
                     <a href="#" class="text-gray-600 hover:text-gray-900">About</a>

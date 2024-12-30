@@ -35,7 +35,7 @@
         <flux:navbar class="-mb-px max-lg:hidden">
             <flux:navbar.item href="#">About</flux:navbar.item>
 
-            <flux:navbar.item href="#">Articles</flux:navbar.item>
+            <flux:navbar.item href="{{ route('articles.index') }}">Articles</flux:navbar.item>
             <flux:navbar.item href="#">Projects</flux:navbar.item>
             <flux:navbar.item href="#">Services</flux:navbar.item>
 

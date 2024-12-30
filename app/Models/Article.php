@@ -8,11 +8,14 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Article extends Model implements HasMedia
 {
     use HasTranslations;
     use InteractsWithMedia;
+    use HasSlug;
 
     protected $guarded = [];
     protected $casts = [
@@ -55,4 +58,16 @@ class Article extends Model implements HasMedia
             ->fit(Fit::Contain, 300, 300)
             ->nonQueued();
     }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug';
+    // }
 }

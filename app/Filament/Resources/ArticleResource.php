@@ -10,10 +10,15 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\MarkdownEditor;
 
 class ArticleResource extends Resource
 {
@@ -32,19 +37,57 @@ class ArticleResource extends Resource
 
                 Forms\Components\TextInput::make('title')
                     ->maxLength(255),
+                Forms\Components\TextInput::make('slug'),
+                Forms\Components\TextInput::make('excerpt')
+                    ->maxLength(255),
+                Forms\Components\MarkdownEditor::make('outline'),
                 // Forms\Components\TextInput::make('description')
                 //     ->maxLength(255),
                 // Forms\Components\TextInput::make('short_description')
                 //     ->maxLength(255),
-                // Forms\Components\TextInput::make('excerpt')
-                //     ->maxLength(255),
+
                 // Forms\Components\TextInput::make('outline'),
                 Forms\Components\TextInput::make('intro')->maxLength(255),
                 // Forms\Components\TextInput::make('essential_learning_points')
                 //     ->maxLength(255),
                 // Forms\Components\Textarea::make('body')
                 //     ->columnSpanFull(),
-                Forms\Components\TextInput::make('content'),
+                Builder::make('content')
+                    ->blocks([
+                        Builder\Block::make('heading')
+                            ->schema([
+                                TextInput::make('content')
+                                    ->label('Heading')
+                                    ->required(),
+                                Select::make('level')
+                                    ->options([
+                                        'h1' => 'Heading 1',
+                                        'h2' => 'Heading 2',
+                                        'h3' => 'Heading 3',
+                                        'h4' => 'Heading 4',
+                                        'h5' => 'Heading 5',
+                                        'h6' => 'Heading 6',
+                                    ])
+                                    ->required(),
+                            ])
+                            ->columns(2),
+                        Builder\Block::make('paragraph')
+                            ->schema([
+                                Textarea::make('content')
+                                    ->label('Paragraph')
+                                    ->required(),
+                            ]),
+                        Builder\Block::make('image')
+                            ->schema([
+                                FileUpload::make('url')
+                                    ->label('Image')
+                                    ->image()
+                                    ->required(),
+                                TextInput::make('alt')
+                                    ->label('Alt text')
+                                    ->required(),
+                            ])->columns(2),
+                    ]),
                 // Forms\Components\TextInput::make('key_takeaways')
                 //     ->maxLength(255),
                 // Forms\Components\TextInput::make('summary')
@@ -53,7 +96,7 @@ class ArticleResource extends Resource
                 //     ->maxLength(255),
                 // Forms\Components\TextInput::make('call_to_action')
                 //     ->maxLength(255),
-                // Forms\Components\TextInput::make('slug')
+                // 
                 //     ->maxLength(255),
                 // Forms\Components\TextInput::make('seo_title')
                 //     ->maxLength(255),

@@ -51,7 +51,7 @@
 
         <div class="py-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div class="col-span-3 prose">
-                <h2 class="text-2xl">Hi I'm Janus Helkjær</h2>
+                <h2 class="text-4xl font-extrabold">Hi I'm Janus Helkjær</h2>
                 <flux:subheading>Web Developer</flux:subheading>
             </div>
             <div>
@@ -174,10 +174,9 @@
                 <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                         <div class="relative w-full lg:max-w-xl  xl:max-w-2xl">
-                            <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                            <h1 class=" text-5xl font-extrabold tracking-tight text-gray-900 sm:text-7xl">
                                 I like to mess around</h1>
-                            <p
-                                class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                            <p class="mt-8 text-gray-800 sm:max-w-md text-lg lg:max-w-none">
                                 Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in quis cupidatat mollit aute
                                 velit. Et labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint
                                 aliqua anim nulla sunt mollit id pariatur in voluptate cillum. Eu voluptate tempor esse
@@ -240,7 +239,7 @@
         <!-- Content section -->
         <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Our mission
+                <h2 class="text-pretty text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">Our mission
                 </h2>
                 <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
                     <div class="lg:w-full lg:max-w-2xl lg:flex-auto">

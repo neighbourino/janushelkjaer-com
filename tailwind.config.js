@@ -15,6 +15,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                serif: ['Spectral', ...defaultTheme.fontFamily.serif],
                 display: ['Bebas Neue', ...defaultTheme.fontFamily.sans],
             },
         },

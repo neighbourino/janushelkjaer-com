@@ -6,10 +6,10 @@ use App\Livewire\Pages\About;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    if (config('env') !== 'production') {
-        return view('welcome');
+    if (config('APP_ENV') == 'production') {
+        return view('home');
     }
-    return view('home');
+    return view('welcome');
 })->name('welcome');
 
 Route::get('about', About::class)->name('pages.about');

@@ -6,7 +6,7 @@ use App\Livewire\Pages\About;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    if (config('APP_ENV') == 'production') {
+    if (config('app.env') == 'production') {
         return view('home');
     }
     return view('welcome');

@@ -36,7 +36,7 @@
             name="{{ config('app.name', 'Laravel') }}" class="max-lg:!hidden hidden dark:flex" href="/" />
 
 
-        @if (config('APP_ENV') !== 'production')
+        @if (config('app.env') !== 'production')
             <flux:navbar class="-mb-px max-lg:hidden">
                 <flux:navbar.item href="{{ route('pages.about') }}">About</flux:navbar.item>
 

@@ -52,9 +52,9 @@ class ArticleResource extends Resource
                 //     ->maxLength(255),
                 // Forms\Components\Textarea::make('body')
                 //     ->columnSpanFull(),
-                Builder::make('content')
+                Forms\Components\Builder::make('content')
                     ->blocks([
-                        Builder\Block::make('heading')
+                        Forms\Components\Builder\Block::make('heading')
                             ->schema([
                                 TextInput::make('content')
                                     ->label('Heading')
@@ -71,13 +71,13 @@ class ArticleResource extends Resource
                                     ->required(),
                             ])
                             ->columns(2),
-                        Builder\Block::make('paragraph')
+                        Forms\Components\Builder\Block::make('paragraph')
                             ->schema([
                                 Textarea::make('content')
                                     ->label('Paragraph')
                                     ->required(),
                             ]),
-                        Builder\Block::make('image')
+                        Forms\Components\Builder\Block::make('image')
                             ->schema([
                                 FileUpload::make('url')
                                     ->label('Image')
@@ -86,7 +86,7 @@ class ArticleResource extends Resource
                                 TextInput::make('alt')
                                     ->label('Alt text')
                                     ->required(),
-                            ])->columns(2),
+                            ]),
                     ]),
                 // Forms\Components\TextInput::make('key_takeaways')
                 //     ->maxLength(255),

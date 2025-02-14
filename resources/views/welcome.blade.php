@@ -17,9 +17,7 @@
                         <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                             Specialized. Focused. Ever Learning.
                         </h2>
-                        <p class="mt-6 text-lg/8 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et
-                            fermentum, augue.</p>
+                        <p class="mt-6 text-lg/8 text-gray-600">{{ __('actions.accept') }}</p>
                         <div class="mt-8 flex items-center gap-x-6">
                             <a href="#"
                                 class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create
@@ -53,8 +51,65 @@
             </div>
         </div>
 
+        <div class="relative z-10 mt-32 bg-zinc-900 py-12 xl:pb-0 -mx-8">
+            <div class="mx-auto max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
+                <div class="max-w-3xl">
+                    <h2 id="features-heading" class="font-medium text-gray-500">Focus</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple productivity</p>
+                    <p class="mt-4 text-gray-500">Focus allows you to plan 10 daily tasks, while also thinking ahead
+                        about what's next. Forget distracting digital apps and embrace these small, sturdy pieces of
+                        paper.</p>
+                </div>
+
+                <div
+                    class="mt-11 grid grid-cols-1 items-start gap-x-6 gap-y-16 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
+                    <div class="flex flex-col-reverse">
+                        <div class="mt-6">
+                            <h3 class="text-sm font-medium text-gray-900">Three card types</h3>
+                            <p class="mt-2 text-sm text-gray-500">Today, Next, and Someday cards allow you to defer your
+                                dreams into the future.</p>
+                        </div>
+                        <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-08-detail-01.jpg"
+                            alt="Green cardstock box containing white, beige, and brown cards."
+                            class="aspect-square w-full rounded-lg bg-gray-100 object-cover">
+                    </div>
+                    <div class="flex flex-col-reverse">
+                        <div class="mt-6">
+                            <h3 class="text-sm font-medium text-gray-900">The perfect mix</h3>
+                            <p class="mt-2 text-sm text-gray-500">Each refill pack contains plenty of cards to last you
+                                a month of procrastination.</p>
+                        </div>
+                        <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-08-detail-02.jpg"
+                            alt="Green cardstock box open with 50 cards inside."
+                            class="aspect-square w-full rounded-lg bg-gray-100 object-cover">
+                    </div>
+                    <div class="flex flex-col-reverse">
+                        <div class="mt-6">
+                            <h3 class="text-sm font-medium text-gray-900">Dot grid backs</h3>
+                            <p class="mt-2 text-sm text-gray-500">Flip a card over to doodle during meetings when you
+                                should be listening.</p>
+                        </div>
+                        <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-08-detail-03.jpg"
+                            alt="Detail of white today card, beige next card, and brown someday card with dot grid."
+                            class="aspect-square w-full rounded-lg bg-gray-100 object-cover">
+                    </div>
+                    <div class="flex flex-col-reverse">
+                        <div class="mt-6">
+                            <h3 class="text-sm font-medium text-gray-900">Refill packs</h3>
+                            <p class="mt-2 text-sm text-gray-500">Subscribe and save on routine refill packs to keep you
+                                productive all year long.</p>
+                        </div>
+                        <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/product-feature-08-detail-04.jpg"
+                            alt="Stack of three green cardstock boxes with 3 hole cutouts showing cards inside."
+                            class="aspect-square w-full rounded-lg bg-gray-100 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div>
-            <div class="relative z-10 mt-32 bg-zinc-900 pb-20 sm:mt-56 sm:pb-24 xl:pb-0 -mx-8">
+            <div class="relative z-10 mt-32 bg-zinc-900 pb-20 sm:mt-56 sm:pb-24">
                 <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
                     <div class="absolute top-[calc(50%-36rem)] left-[calc(50%-19rem)] transform-gpu blur-3xl">
                         <div class="aspect-1097/1023 w-[68.5625rem] bg-linear-to-r from-[#ff4694] to-[#776fff] opacity-25"
@@ -91,6 +146,96 @@
                         </figure>
                     </div>
                 </div>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="relative overflow-hidden bg-white py-24 sm:py-32 -mx-8">
+                <!-- Decorative background image and gradient -->
+                <div aria-hidden="true" class="absolute inset-0">
+                    <div class="absolute inset-0 mx-auto max-w-7xl overflow-hidden xl:px-8">
+                        <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/home-page-02-sale-full-width.jpg"
+                            alt="" class="size-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-white/75"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white"></div>
+                </div>
+
+                <!-- Callout -->
+                <section aria-labelledby="sale-heading"
+                    class="relative mx-auto flex max-w-7xl flex-col items-center px-4 pt-32 text-center sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-2xl lg:max-w-none">
+                        <h2 id="sale-heading"
+                            class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">Get 25% off
+                            during our one-time sale</h2>
+                        <p class="mx-auto mt-4 max-w-xl text-xl text-gray-600">Most of our products are limited
+                            releases
+                            that won't come back. Get your favorite items while they're in stock.</p>
+                        <a href="#"
+                            class="mt-6 inline-block w-full rounded-md border border-transparent bg-gray-900 px-8 py-3 font-medium text-white hover:bg-gray-800 sm:w-auto">Get
+                            access to our one-time sale</a>
+                    </div>
+                </section>
+
+                <!-- Testimonials -->
+                <section aria-labelledby="testimonial-heading"
+                    class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+                    <div class="mx-auto max-w-2xl lg:max-w-none">
+                        <h2 id="testimonial-heading" class="text-2xl font-bold tracking-tight text-gray-900">What are
+                            people saying?</h2>
+
+                        <div class="mt-16 space-y-16 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
+                            <blockquote class="sm:flex lg:block">
+                                <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true"
+                                    class="shrink-0 text-gray-300">
+                                    <path
+                                        d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
+                                        fill="currentColor" />
+                                </svg>
+                                <div class="mt-8 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-10">
+                                    <p class="text-lg text-gray-600">My order arrived super quickly. The product is
+                                        even
+                                        better than I hoped it would be. Very happy customer over here!</p>
+                                    <cite class="mt-4 block font-semibold not-italic text-gray-900">Sarah Peters, New
+                                        Orleans</cite>
+                                </div>
+                            </blockquote>
+                            <blockquote class="sm:flex lg:block">
+                                <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true"
+                                    class="shrink-0 text-gray-300">
+                                    <path
+                                        d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
+                                        fill="currentColor" />
+                                </svg>
+                                <div class="mt-8 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-10">
+                                    <p class="text-lg text-gray-600">I had to return a purchase that didn’t fit. The
+                                        whole
+                                        process was so simple that I ended up ordering two new items!</p>
+                                    <cite class="mt-4 block font-semibold not-italic text-gray-900">Kelly McPherson,
+                                        Chicago</cite>
+                                </div>
+                            </blockquote>
+                            <blockquote class="sm:flex lg:block">
+                                <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true"
+                                    class="shrink-0 text-gray-300">
+                                    <path
+                                        d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
+                                        fill="currentColor" />
+                                </svg>
+                                <div class="mt-8 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-10">
+                                    <p class="text-lg text-gray-600">Now that I’m on holiday for the summer, I’ll
+                                        probably
+                                        order a few more shirts. It’s just so convenient, and I know the quality will
+                                        always
+                                        be there.</p>
+                                    <cite class="mt-4 block font-semibold not-italic text-gray-900">Chris Paul,
+                                        Phoenix</cite>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 

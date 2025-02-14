@@ -58,6 +58,24 @@
                 <flux:button icon="youtube" size="sm" href="" />
                 <flux:button icon="twitter" size="sm" href="#" />
                 <flux:button icon="github" size="sm" href="#" />
+                <flux:separator vertical class="my-2" />
+                <flux:button size="sm"
+                    href="{{ LaravelLocalization::getLocalizedURL(app()->currentLocale() == 'en' ? 'da' : 'en') }}"
+                    class="uppercase text-xs">
+                    {{ app()->currentLocale() == 'en' ? 'da' : 'en' }}
+                </flux:button>
+                {{-- <ul>
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul> --}}
+                {{-- <flux:button x-data x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
+                    aria-label="Toggle dark mode" /> --}}
             </flux:navbar>
         @endif
 

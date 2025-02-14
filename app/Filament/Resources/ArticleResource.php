@@ -2,23 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ArticleResource\Pages;
-use App\Filament\Resources\ArticleResource\RelationManagers;
-use App\Models\Article;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Article;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Resources\Concerns\Translatable;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\Builder;
-use Filament\Forms\Components\FileUpload;
+use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Resources\Concerns\Translatable;
+use App\Filament\Resources\ArticleResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\Resources\ArticleResource\RelationManagers;
 
 class ArticleResource extends Resource
 {
@@ -52,6 +53,9 @@ class ArticleResource extends Resource
                 //     ->maxLength(255),
                 // Forms\Components\Textarea::make('body')
                 //     ->columnSpanFull(),
+                Section::make('Notes')->schema([
+                    Forms\Components\MarkdownEditor::make('notes')
+                ])->collapsible(),
                 Forms\Components\Builder::make('content')
                     ->blocks([
                         Forms\Components\Builder\Block::make('heading')

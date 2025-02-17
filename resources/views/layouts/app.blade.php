@@ -38,11 +38,18 @@
 
         @if (config('app.env') !== 'production')
             <flux:navbar class="-mb-px max-lg:hidden">
-                <flux:navbar.item href="{{ route('pages.about') }}">About</flux:navbar.item>
+                {{-- <flux:navbar.item href="{{ route('pages.about') }}">
+                    {{ __('navigation.about') }}
+                </flux:navbar.item> --}}
 
-                <flux:navbar.item href="{{ route('articles.index') }}">Articles</flux:navbar.item>
-                <flux:navbar.item href="#">Projects</flux:navbar.item>
-                <flux:navbar.item href="#">Services</flux:navbar.item>
+                <flux:navbar.item href="{{ route('articles.index') }}">{{ __('navigation.articles') }}
+                </flux:navbar.item>
+                <flux:navbar.item href="#">
+                    {{ __('navigation.projects') }}
+                </flux:navbar.item>
+                <flux:navbar.item href="#">
+                    {{ __('navigation.services') }}
+                </flux:navbar.item>
 
             </flux:navbar>
 
@@ -55,13 +62,16 @@
             <flux:navbar.item icon="magnifying-glass" href="#" label="Search" /> --}}
 
                 <flux:separator vertical class="my-2" />
-                <flux:button icon="youtube" size="sm" href="" />
-                <flux:button icon="twitter" size="sm" href="#" />
-                <flux:button icon="github" size="sm" href="#" />
+                <flux:button icon="youtube" size="sm" href="https://www.youtube.com/janushelkjaer" target="_blank"
+                    variant="subtle" />
+                <flux:button icon="twitter" size="sm" href="https://x.com/janushelkjaer" target="_blank"
+                    variant="subtle" />
+                <flux:button icon="github" size="sm" href="https://github.com/janushelkjaer" target="_blank"
+                    variant="subtle" />
                 <flux:separator vertical class="my-2" />
                 <flux:button size="sm"
                     href="{{ LaravelLocalization::getLocalizedURL(app()->currentLocale() == 'en' ? 'da' : 'en') }}"
-                    class="uppercase text-xs">
+                    variant="filled" class="uppercase text-xs">
                     {{ app()->currentLocale() == 'en' ? 'da' : 'en' }}
                 </flux:button>
                 {{-- <ul>
@@ -97,7 +107,9 @@
     <flux:main container class="bg-white dark:bg-zinc-900 border-l border-r border-zinc-100 dark:border-zinc-700">
         {{ $slot }}
 
-        @if (1 == 2)
+
+
+        @if (1 == 1)
             <footer class="bg-white mt-24">
                 <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
                     <nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
@@ -149,13 +161,14 @@
                             </svg>
                         </a>
                     </div>
-                    <p class="mt-10 text-center text-sm/6 text-gray-600">&copy; 2024 Janus Helkjær, Inc. All rights
+                    <p class="mt-10 text-center text-sm/6 text-gray-600">&copy; 2024 {{ c('general.copyright') }},
+                        Inc. All
+                        rights
                         reserved.</p>
                     <p>CVR: DK 36373040</p>
                 </div>
             </footer>
         @endif
-
     </flux:main>
 
 

@@ -36,6 +36,7 @@
         "pestphp/pest-plugin-laravel": "^3.0"
     },
     "autoload": {
+        "files": ["app/functions.php"],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
@@ -84,7 +85,7 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
         "flux-pro": {

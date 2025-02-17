@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a22c4c9785ea3f7d90de3027947052c",
+    "content-hash": "73017d212e78792a315eeeeb20878f2e",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1451,16 +1451,16 @@
         },
         {
             "name": "dragon-code/support",
-            "version": "6.15.1",
+            "version": "6.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheDragonCode/support.git",
-                "reference": "dd68d435d64873797a82b318021d49ba05e917bf"
+                "reference": "33679b6736619751a9ac8935f955f5a9f73ee996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheDragonCode/support/zipball/dd68d435d64873797a82b318021d49ba05e917bf",
-                "reference": "dd68d435d64873797a82b318021d49ba05e917bf",
+                "url": "https://api.github.com/repos/TheDragonCode/support/zipball/33679b6736619751a9ac8935f955f5a9f73ee996",
+                "reference": "33679b6736619751a9ac8935f955f5a9f73ee996",
                 "shasum": ""
             },
             "require": {
@@ -1538,15 +1538,11 @@
                     "type": "boosty"
                 },
                 {
-                    "url": "https://www.donationalerts.com/r/dragon_code",
-                    "type": "donationalerts"
-                },
-                {
                     "url": "https://yoomoney.ru/to/410012608840929",
                     "type": "yoomoney"
                 }
             ],
-            "time": "2024-12-18T12:33:59+00:00"
+            "time": "2025-02-17T10:17:56+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -2939,16 +2935,16 @@
         },
         {
             "name": "laravel-lang/common",
-            "version": "6.4.0",
+            "version": "6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/common.git",
-                "reference": "36c0270180f71420c1166c26f38dc25e1c8b7f64"
+                "reference": "fd65d7fbea6857c004fd6dc412162e7aeabef653"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/common/zipball/36c0270180f71420c1166c26f38dc25e1c8b7f64",
-                "reference": "36c0270180f71420c1166c26f38dc25e1c8b7f64",
+                "url": "https://api.github.com/repos/Laravel-Lang/common/zipball/fd65d7fbea6857c004fd6dc412162e7aeabef653",
+                "reference": "fd65d7fbea6857c004fd6dc412162e7aeabef653",
                 "shasum": ""
             },
             "require": {
@@ -2959,6 +2955,7 @@
                 "laravel-lang/lang": "^13.12 || ^14.0 || ^15.5.1",
                 "laravel-lang/locales": "^2.8",
                 "laravel-lang/models": "^1.0",
+                "laravel-lang/moonshine": "^1.1",
                 "laravel-lang/publisher": "^16.4",
                 "laravel-lang/routes": "^1.0",
                 "php": "^8.1"
@@ -3009,6 +3006,7 @@
                 "locales",
                 "localization",
                 "localizations",
+                "moonshine",
                 "nova",
                 "publisher",
                 "spark",
@@ -3020,7 +3018,7 @@
                 "issues": "https://github.com/Laravel-Lang/common/issues",
                 "source": "https://github.com/Laravel-Lang/common"
             },
-            "time": "2024-07-06T16:48:35+00:00"
+            "time": "2025-02-17T10:35:09+00:00"
         },
         {
             "name": "laravel-lang/config",
@@ -3491,6 +3489,74 @@
             "time": "2024-11-06T20:23:30+00:00"
         },
         {
+            "name": "laravel-lang/moonshine",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Lang/moonshine.git",
+                "reference": "3fff17d1d5999f1964e522609db82463423e9e25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Lang/moonshine/zipball/3fff17d1d5999f1964e522609db82463423e9e25",
+                "reference": "3fff17d1d5999f1964e522609db82463423e9e25",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel-lang/publisher": "^15.0 || ^16.4.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "dragon-code/support": "^6.15.2",
+                "illuminate/support": "^10.0 || ^11.0",
+                "laravel-lang/lang": "^14.8 || ^15.14",
+                "laravel-lang/status-generator": "^2.12",
+                "phpunit/phpunit": "^10.0",
+                "symfony/var-dumper": "^6.3 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelLang\\MoonShine\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelLang\\MoonShine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Helldar",
+                    "email": "helldar@dragon-code.pro"
+                },
+                {
+                    "name": "Laravel Lang Team",
+                    "homepage": "https://laravel-lang.com"
+                }
+            ],
+            "description": "Translation for MoonShine admin panel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "moonshine",
+                "translations"
+            ],
+            "support": {
+                "issues": "https://github.com/Laravel-Lang/moonshine/issues",
+                "source": "https://github.com/Laravel-Lang/moonshine/tree/1.1.0"
+            },
+            "time": "2025-02-17T10:31:11+00:00"
+        },
+        {
             "name": "laravel-lang/native-country-names",
             "version": "1.4.0",
             "source": {
@@ -3797,16 +3863,16 @@
         },
         {
             "name": "laravel-lang/routes",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/routes.git",
-                "reference": "addc4438fac481389e66e349ac3b93670aa4301b"
+                "reference": "c1d40fff2cc7c31260abce21d2ce6b7c330f9537"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/routes/zipball/addc4438fac481389e66e349ac3b93670aa4301b",
-                "reference": "addc4438fac481389e66e349ac3b93670aa4301b",
+                "url": "https://api.github.com/repos/Laravel-Lang/routes/zipball/c1d40fff2cc7c31260abce21d2ce6b7c330f9537",
+                "reference": "c1d40fff2cc7c31260abce21d2ce6b7c330f9537",
                 "shasum": ""
             },
             "require": {
@@ -3870,7 +3936,7 @@
                 "issues": "https://github.com/Laravel-Lang/routes/issues",
                 "source": "https://github.com/Laravel-Lang/routes"
             },
-            "time": "2024-07-10T10:28:26+00:00"
+            "time": "2025-02-16T23:06:12+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -7469,16 +7535,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "11.12.5",
+            "version": "11.12.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "963a5afaad0a9f292afd9501204797d4fd5fde93"
+                "reference": "4357e6bd031008751123520602e6370b71b3bc21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/963a5afaad0a9f292afd9501204797d4fd5fde93",
-                "reference": "963a5afaad0a9f292afd9501204797d4fd5fde93",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/4357e6bd031008751123520602e6370b71b3bc21",
+                "reference": "4357e6bd031008751123520602e6370b71b3bc21",
                 "shasum": ""
             },
             "require": {
@@ -7562,7 +7628,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/11.12.5"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/11.12.6"
             },
             "funding": [
                 {
@@ -7574,7 +7640,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-14T13:24:42+00:00"
+            "time": "2025-02-17T09:28:14+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -13654,7 +13720,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,

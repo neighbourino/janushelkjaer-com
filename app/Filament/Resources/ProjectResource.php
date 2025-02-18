@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
-use App\Models\Post;
+use App\Filament\Resources\ProjectResource\Pages;
+use App\Filament\Resources\ProjectResource\RelationManagers;
+use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,14 +12,15 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Resources\Concerns\Translatable;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Resources\Concerns\Translatable;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 
-class PostResource extends Resource
+class ProjectResource extends Resource
 {
     use Translatable;
 
-    protected static ?string $model = Post::class;
+    protected static ?string $model = Project::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -27,14 +28,14 @@ class PostResource extends Resource
     {
         return $form
             ->schema([
-                SpatieMediaLibraryFileUpload::make('featured_image')->collection('posts'),
+                SpatieMediaLibraryFileUpload::make('featured_image')->collection('projects'),
                 Forms\Components\TextInput::make('title'),
                 Forms\Components\TextInput::make('slug'),
                 Forms\Components\TextInput::make('content'),
                 Forms\Components\TextInput::make('short_description'),
-                Forms\Components\DateTimePicker::make('published_at'),
                 Forms\Components\TextInput::make('seo'),
                 Forms\Components\TextInput::make('meta'),
+                Forms\Components\TextInput::make('link_to_project'),
             ]);
     }
 
@@ -42,11 +43,9 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('featured_image'),
+
+                SpatieMediaLibraryImageColumn::make('featured_image')->collection('projects'),
                 Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('published_at')
-                    ->dateTime()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -79,9 +78,9 @@ class PostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPosts::route('/'),
-            'create' => Pages\CreatePost::route('/create'),
-            'edit' => Pages\EditPost::route('/{record}/edit'),
+            'index' => Pages\ListProjects::route('/'),
+            'create' => Pages\CreateProject::route('/create'),
+            'edit' => Pages\EditProject::route('/{record}/edit'),
         ];
     }
 

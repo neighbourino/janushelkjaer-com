@@ -41,10 +41,21 @@
                 {{-- <flux:navbar.item href="{{ route('pages.about') }}">
                     {{ __('navigation.about') }}
                 </flux:navbar.item> --}}
+                @php
+                    $navLinks = c('nav.navlinks');
+                    #dd($navLinks);
+                @endphp
+
+                @foreach ($navLinks as $navLink)
+                    <flux:navbar.item href="{{ $navLink['link'] }}">
+                        {{ $navLink['name'] }}
+                    </flux:navbar.item>
+                @endforeach
+
 
                 <flux:navbar.item href="{{ route('articles.index') }}">{{ __('navigation.articles') }}
                 </flux:navbar.item>
-                <flux:navbar.item href="#">
+                <flux:navbar.item href="{{ route('projects.index') }}">
                     {{ __('navigation.projects') }}
                 </flux:navbar.item>
                 <flux:navbar.item href="#">

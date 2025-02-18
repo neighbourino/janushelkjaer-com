@@ -8,7 +8,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\ProjectController;
 
 Route::get('/', function () {
 
@@ -20,11 +20,11 @@ Route::group([
     'prefix' => LaravelLocalization::setLocale()
 ], function () {
     Route::get(LaravelLocalization::transRoute('routes.articles'), [BlogController::class, 'index'])->name('articles.index');
-    Route::group([
-        'prefix' => c('routes.blog'),
-    ], function () {
-        Route::get('/{slug}', [BlogController::class, 'show'])->name('posts.show');
-    });
+    Route::get(LaravelLocalization::transRoute('routes.article'), [BlogController::class, 'show'])->name('articles.show');
+    // projects
+    Route::get(LaravelLocalization::transRoute('routes.projects'), [ProjectController::class, 'index'])->name('projects.index');
+    Route::get(LaravelLocalization::transRoute('routes.project'), [ProjectController::class, 'show'])->name('projects.show');
+
     Route::get('/{any?}', [PageController::class, 'show'])->where('any', '.*')->name('pages.show');
 });
 

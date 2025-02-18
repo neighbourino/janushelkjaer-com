@@ -26,7 +26,7 @@
 
                         @endphp
                         <flux:card class="flex flex-col md:flex-row">
-                            <a href="{{ route('posts.show', $post->slug) }}"
+                            <a href="{{ route('articles.show', $post->slug) }}"
                                 class="block hover:opacity-75 transition-opacity duration-300 border-yellow-500 border-4 rounded shadow">
                                 <img src="{{ $publicFullUrl }}" alt="{{ $post->title }}"
                                     class="object-cover rounded shadow  h-48 w-64">
@@ -43,7 +43,7 @@
                                 </flux:subheading>
 
                                 <flux:button class="ml-auto mt-auto" icon="plus"
-                                    href="{{ route('posts.show', $post->slug) }}">Read Article
+                                    href="{{ route('articles.show', $post->slug) }}">Read Article
                                 </flux:button>
                             </div>
                         </flux:card>

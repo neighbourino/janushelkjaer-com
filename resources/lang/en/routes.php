@@ -2,6 +2,8 @@
 
 return [
     'articles' => 'articles',
-    'article' => 'articles/{article}',
+    'article' => 'articles/{slug}',
     'welcome' => '/',
+    'projects' => 'projects',
+    'project' => 'projects/{slug}',
 ];

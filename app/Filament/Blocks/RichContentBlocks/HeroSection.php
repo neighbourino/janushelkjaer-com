@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Filament\Blocks\RichContentBlocks;
+
 use App\Filament\Blocks\BaseBlock;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -17,7 +18,7 @@ class HeroSection extends BaseBlock
                 'secondary' => 'Secondary',
                 'white' => 'White',
             ]),
-            FileUpload::make('hero_image')->image(),
+            // FileUpload::make('hero_image')->image(),
             Forms\Components\TextInput::make('hero_title'),
             Forms\Components\RichEditor::make('hero_content'),
             Forms\Components\Repeater::make('buttons')->schema([

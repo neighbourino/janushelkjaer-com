@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\BlockGroups\Properties;
+use App\Filament\BlockGroups\RichContent;
 
 class PostResource extends Resource
 {
@@ -27,14 +29,9 @@ class PostResource extends Resource
     {
         return $form
             ->schema([
+                ...Properties::make($form),
+                RichContent::builder($form)->columnSpanFull(),
                 SpatieMediaLibraryFileUpload::make('featured_image')->collection('posts'),
-                Forms\Components\TextInput::make('title'),
-                Forms\Components\TextInput::make('slug'),
-                Forms\Components\TextInput::make('content'),
-                Forms\Components\TextInput::make('short_description'),
-                Forms\Components\DateTimePicker::make('published_at'),
-                Forms\Components\TextInput::make('seo'),
-                Forms\Components\TextInput::make('meta'),
             ]);
     }
 

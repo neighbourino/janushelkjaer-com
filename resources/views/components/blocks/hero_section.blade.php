@@ -1,38 +1,137 @@
 @php
     $data = $attributes['info']['data'];
+
+    $style = 'hero_01';
 @endphp
 
-{{ json_encode($data) }}
-<div class="pb-12">
-    <div
-        class="p-10 sm:p-10 m-5 rounded-3xl  dark:text-white bg-white text-black flex items-center justify-center overflow-hidden shadow-2xl">
-        <div class="w-full max-w-6xl px-4 sm:px-6">
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <!-- Left Section: Text Content -->
-                <div class="flex flex-col justify-center text-center md:text-left z-10">
-                    <h1
-                        class="text-4xl sm:text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase leading-tight tracking-tight">
-                        I Help <br> Ideas <br> Come To <br><span class="text-yellow-500 underline">Life</span>
-                    </h1>
-                    <p class="mt-6 text-base  dark:text-gray-400 text-gray-600 text-balance">
-                        I am a solo entrepreneur, who builds digital product businesses and share the process,
-                        including coding, entrepreneurship, marketing & A.I.
-                    </p>
-                    <div class="mt-6 sm:mt-8 flex flex-wrap gap-4">
-                        <a href="#get-started"
-                            class="rounded-sm p-3 grow text-center bg-yellow-500 text-black font-bold uppercase text-sm tracking-widest hover:bg-yellow-600 transition">
-                            Get Started
-                        </a>
-                        <a href="#learn-more"
-                            class="rounded-sm p-3 grow border text-center border-yellow-500 text-yellow-500 font-bold uppercase text-sm tracking-widest hover:bg-yellow-500 hover:text-black transition">
-                            Learn More
-                        </a>
+@if ($style == 'hero_01')
+    <div class="relative isolate">
+        <svg class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+            aria-hidden="true">
+            <defs>
+                <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1"
+                    patternUnits="userSpaceOnUse">
+                    <path d="M.5 200V.5H200" fill="none" />
+                </pattern>
+            </defs>
+            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+                <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+                    stroke-width="0" />
+            </svg>
+            <rect width="100%" height="100%" stroke-width="0" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
+        </svg>
+        <div class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+            aria-hidden="true">
+            <div class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+                style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)">
+            </div>
+        </div>
+        <div class="overflow-hidden">
+            <div class="mx-auto max-w-7xl  px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
+                <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                    <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+                        <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                            {{ $data['hero_title'] }}</h1>
+                        <p
+                            class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                            {!! $data['hero_content'] !!}
+                        </p>
+                        <div class="mt-10 flex items-center gap-x-6">
+                            <flux:button variant="primary" icon="hand-raised">
+                                Work With Me
+                            </flux:button>
+                            <flux:button>
+                                Newsletter
+                            </flux:button>
+                        </div>
+                    </div>
+                    <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                        <div
+                            class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg">
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg">
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg">
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg">
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg">
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+@endif
 
-                <!-- Right Section: Visual Block -->
-                <div class="relative flex items-center sm:m-10 [perspective:1000px]">
-                    {{-- <div
+
+@if ($style == 'hero_02')
+    <div class="pb-12">
+        <div
+            class="p-10 sm:p-10 m-5 rounded-3xl  dark:text-white bg-white text-black flex items-center justify-center overflow-hidden shadow-2xl">
+            <div class="w-full max-w-6xl px-4 sm:px-6">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <!-- Left Section: Text Content -->
+                    <div class="flex flex-col justify-center text-center md:text-left z-10">
+                        <h1
+                            class="text-4xl sm:text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase leading-tight tracking-tight">
+                            I Help <br> Ideas <br> Come To <br><span class="text-yellow-500 underline">Life</span>
+                        </h1>
+                        <p class="mt-6 text-base  dark:text-gray-400 text-gray-600 text-balance">
+                            I am a solo entrepreneur, who builds digital product businesses and share the process,
+                            including coding, entrepreneurship, marketing & A.I.
+                        </p>
+                        <div class="mt-6 sm:mt-8 flex flex-wrap gap-4">
+                            <a href="#get-started"
+                                class="rounded-sm p-3 grow text-center bg-yellow-500 text-black font-bold uppercase text-sm tracking-widest hover:bg-yellow-600 transition">
+                                Get Started
+                            </a>
+                            <a href="#learn-more"
+                                class="rounded-sm p-3 grow border text-center border-yellow-500 text-yellow-500 font-bold uppercase text-sm tracking-widest hover:bg-yellow-500 hover:text-black transition">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Visual Block -->
+                    <div class="relative flex items-center sm:m-10 [perspective:1000px]">
+                        {{-- <div
                             class="absolute -top-10 md:-top-20 -left-10 sm:w-32 sm:h-32 lg:w-64 lg:h-64 bg-yellow-500 rotate-12 rounded-lg border-yellow-700 border-b-4 border-r-8 max-sm:hidden">
                         </div>
                         <div
@@ -47,23 +146,24 @@
                         <div
                             class="absolute -bottom-10 md:-bottom-20 -right-16 sm:w-32 sm:h-32 lg:w-64 lg:h-64 bg-yellow-500 -rotate-12 rounded-lg border-yellow-700 border-r-4 border-b-8 max-sm:hidden">
                         </div> --}}
-                    <div
-                        class="font-sans sm:h-[250px] sm:w-[250px] xs:h-[150px] xs:w-[150px] absolute sm:top-[30%] sm:left-[30%] xs:top-[40%] xs:left-[30%] [transform-style:preserve-3d] animate-[roll_5s_infinite]">
-                        <div class="box sm:[transform:translateZ(125px)] xs:[transform:translateZ(75px)]">
-                            Front</div>
-                        <div class="box sm:[transform:translateZ(-125px)] xs:[transform:translateZ(-75px)]">
-                            Back</div>
-                        <div class="box sm:right-[125px] xs:right-[75px] [transform:rotateY(-90deg)]">
-                            Left</div>
-                        <div class="box sm:left-[125px] xs:left-[75px] [transform:rotateY(90deg)]">
-                            Right</div>
-                        <div class="box sm:bottom-[125px] xs:bottom-[75px] [transform:rotateX(90deg)]">
-                            Top</div>
-                        <div class="box sm:top-[125px] xs:top-[75px] [transform:rotateX(-90deg)]">
-                            Bottom</div>
+                        <div
+                            class="font-sans sm:h-[250px] sm:w-[250px] xs:h-[150px] xs:w-[150px] absolute sm:top-[30%] sm:left-[30%] xs:top-[40%] xs:left-[30%] [transform-style:preserve-3d] animate-[roll_5s_infinite]">
+                            <div class="box sm:[transform:translateZ(125px)] xs:[transform:translateZ(75px)]">
+                                Front</div>
+                            <div class="box sm:[transform:translateZ(-125px)] xs:[transform:translateZ(-75px)]">
+                                Back</div>
+                            <div class="box sm:right-[125px] xs:right-[75px] [transform:rotateY(-90deg)]">
+                                Left</div>
+                            <div class="box sm:left-[125px] xs:left-[75px] [transform:rotateY(90deg)]">
+                                Right</div>
+                            <div class="box sm:bottom-[125px] xs:bottom-[75px] [transform:rotateX(90deg)]">
+                                Top</div>
+                            <div class="box sm:top-[125px] xs:top-[75px] [transform:rotateX(-90deg)]">
+                                Bottom</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endif

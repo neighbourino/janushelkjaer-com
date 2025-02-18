@@ -24,10 +24,10 @@
 
 </head>
 
-<body class="min-h-screen bg-gray-50 dark:bg-zinc-800">
+<body class="min-h-screen bg-white dark:bg-zinc-800">
 
     <flux:header sticky
-        class="bg-white dark:bg-zinc-900 max-w-7xl mx-auto w-full border-l border-r border-zinc-100 dark:border-zinc-700 z-50 border-b rounded-b">
+        class="bg-white dark:bg-zinc-900 max-w-7xl mx-auto w-full border-l border-r border-t rounded-t border-zinc-100 dark:border-zinc-700 z-50 border-b rounded-b shadow-sm mt-3">
         <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
         <flux:brand href="{{ route('welcome') }}" logo="{{ asset('images/logo.png') }}"
@@ -35,57 +35,55 @@
         <flux:brand href="{{ route('welcome') }}" logo="{{ asset('images/dark-mode-logo.png') }}"
             name="{{ config('app.name', 'Laravel') }}" class="max-lg:!hidden hidden dark:flex" href="/" />
 
-
-        @if (config('app.env') !== 'production')
-            <flux:navbar class="-mb-px max-lg:hidden">
-                {{-- <flux:navbar.item href="{{ route('pages.about') }}">
+        <flux:navbar class="-mb-px max-lg:hidden">
+            {{-- <flux:navbar.item href="{{ route('pages.about') }}">
                     {{ __('navigation.about') }}
                 </flux:navbar.item> --}}
-                @php
-                    $navLinks = c('nav.navlinks');
-                    #dd($navLinks);
-                @endphp
+            @php
+                $navLinks = c('nav.navlinks');
+                #dd($navLinks);
+            @endphp
 
-                @foreach ($navLinks as $navLink)
-                    <flux:navbar.item href="{{ $navLink['link'] }}">
-                        {{ $navLink['name'] }}
-                    </flux:navbar.item>
-                @endforeach
-
-
-                <flux:navbar.item href="{{ route('articles.index') }}">{{ __('navigation.articles') }}
+            @foreach ($navLinks as $navLink)
+                <flux:navbar.item href="{{ $navLink['link'] }}">
+                    {{ $navLink['name'] }}
                 </flux:navbar.item>
-                <flux:navbar.item href="{{ route('projects.index') }}">
-                    {{ __('navigation.projects') }}
-                </flux:navbar.item>
-                <flux:navbar.item href="#">
-                    {{ __('navigation.services') }}
-                </flux:navbar.item>
+            @endforeach
 
-            </flux:navbar>
 
-            <flux:spacer />
+            <flux:navbar.item href="{{ route('articles.index') }}">{{ __('navigation.articles') }}
+            </flux:navbar.item>
+            <flux:navbar.item href="{{ route('projects.index') }}">
+                {{ __('navigation.projects') }}
+            </flux:navbar.item>
+            <flux:navbar.item href="#">
+                {{ __('navigation.services') }}
+            </flux:navbar.item>
 
-            <flux:navbar class="mr-4 space-x-3">
-                <flux:button variant="primary" icon="hand-raised">Work With Me</flux:button>
-                {{-- <flux:button x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
+        </flux:navbar>
+
+        <flux:spacer />
+
+        <flux:navbar class="mr-4 space-x-3">
+            <flux:button variant="primary" icon="hand-raised">Work With Me</flux:button>
+            {{-- <flux:button x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
                 aria-label="Toggle dark mode" />
             <flux:navbar.item icon="magnifying-glass" href="#" label="Search" /> --}}
 
-                <flux:separator vertical class="my-2" />
-                <flux:button icon="youtube" size="sm" href="https://www.youtube.com/janushelkjaer" target="_blank"
-                    variant="subtle" />
-                <flux:button icon="twitter" size="sm" href="https://x.com/janushelkjaer" target="_blank"
-                    variant="subtle" />
-                <flux:button icon="github" size="sm" href="https://github.com/janushelkjaer" target="_blank"
-                    variant="subtle" />
-                <flux:separator vertical class="my-2" />
-                <flux:button size="sm"
-                    href="{{ LaravelLocalization::getLocalizedURL(app()->currentLocale() == 'en' ? 'da' : 'en') }}"
-                    variant="filled" class="uppercase text-xs">
-                    {{ app()->currentLocale() == 'en' ? 'da' : 'en' }}
-                </flux:button>
-                {{-- <ul>
+            <flux:separator vertical class="my-2" />
+            <flux:button icon="youtube" size="sm" href="https://www.youtube.com/janushelkjaer" target="_blank"
+                variant="subtle" />
+            <flux:button icon="twitter" size="sm" href="https://x.com/janushelkjaer" target="_blank"
+                variant="subtle" />
+            <flux:button icon="github" size="sm" href="https://github.com/janushelkjaer" target="_blank"
+                variant="subtle" />
+            <flux:separator vertical class="my-2" />
+            <flux:button size="sm"
+                href="{{ LaravelLocalization::getLocalizedURL(app()->currentLocale() == 'en' ? 'da' : 'en') }}"
+                variant="filled" class="uppercase text-xs">
+                {{ app()->currentLocale() == 'en' ? 'da' : 'en' }}
+            </flux:button>
+            {{-- <ul>
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li>
                             <a rel="alternate" hreflang="{{ $localeCode }}"
@@ -95,10 +93,9 @@
                         </li>
                     @endforeach
                 </ul> --}}
-                {{-- <flux:button x-data x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
+            {{-- <flux:button x-data x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
                     aria-label="Toggle dark mode" /> --}}
-            </flux:navbar>
-        @endif
+        </flux:navbar>
 
     </flux:header>
 
@@ -115,7 +112,7 @@
 
     </flux:sidebar>
 
-    <flux:main container class="bg-white dark:bg-zinc-900 border-l border-r border-zinc-100 dark:border-zinc-700">
+    <flux:main class="bg-white dark:bg-zinc-900 border-l border-r border-zinc-100 dark:border-zinc-700">
         {{ $slot }}
 
 

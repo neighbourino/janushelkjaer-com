@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProjectResource\Pages;
-use App\Filament\Resources\ProjectResource\RelationManagers;
-use App\Models\Project;
+use App\Filament\Resources\CourseResource\Pages;
+use App\Filament\Resources\CourseResource\RelationManagers;
+use App\Models\Course;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,11 +18,11 @@ use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\BlockGroups\Properties;
 use App\Filament\BlockGroups\RichContent;
 
-class ProjectResource extends Resource
+class CourseResource extends Resource
 {
     use Translatable;
 
-    protected static ?string $model = Project::class;
+    protected static ?string $model = Course::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -32,7 +32,7 @@ class ProjectResource extends Resource
             ->schema([
                 ...Properties::make($form),
                 RichContent::builder($form)->columnSpanFull(),
-                SpatieMediaLibraryFileUpload::make('featured_image')->collection('projects'),
+                SpatieMediaLibraryFileUpload::make('featured_image')->collection('courses'),
             ]);
     }
 
@@ -40,8 +40,7 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-
-                SpatieMediaLibraryImageColumn::make('featured_image')->collection('projects'),
+                SpatieMediaLibraryImageColumn::make('featured_image')->collection('courses'),
                 Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -75,14 +74,14 @@ class ProjectResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProjects::route('/'),
-            'create' => Pages\CreateProject::route('/create'),
-            'edit' => Pages\EditProject::route('/{record}/edit'),
+            'index' => Pages\ListCourses::route('/'),
+            'create' => Pages\CreateCourse::route('/create'),
+            'edit' => Pages\EditCourse::route('/{record}/edit'),
         ];
     }
 
     public static function getTranslatableLocales(): array
     {
-        return ['en', 'da'];
+        return ['en', 'ar'];
     }
 }

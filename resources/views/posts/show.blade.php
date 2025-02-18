@@ -105,6 +105,21 @@
     </div>
 
 
+    <div class="flex justify-center w-full">
+        @if ($post->content)
+
+            @foreach ($post->content as $key => $blockComponent)
+                <div>
+                    {{ $blockComponent['type'] }}
+                </div>
+                <div class="py-1 w-full">
+                    <x-dynamic-component :component="'blocks.' . $blockComponent['type']" :info="$blockComponent" />
+                </div>
+            @endforeach
+
+        @endif
+    </div>
+
 
 
 

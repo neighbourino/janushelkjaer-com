@@ -27,7 +27,7 @@ class Properties
                     }
                 })
                 ->reactive()
-                ->live(onBlur: false, debounce: 500)
+                ->live(onBlur: false, debounce: 1500)
                 ->required(),
             TextInput::make('slug')
                 ->afterStateUpdated(function ($set) {

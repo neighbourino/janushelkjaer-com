@@ -12,6 +12,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use App\Traits\HasGravatar;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -23,6 +24,7 @@ class User extends Authenticatable implements FilamentUser
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasGravatar;
 
     /**
      * The attributes that are mass assignable.
@@ -72,5 +74,10 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         return ($this->email == 'janus.helkjaer@gmail.com');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }

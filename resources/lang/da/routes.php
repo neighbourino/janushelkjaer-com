@@ -6,4 +6,6 @@ return [
     'welcome' => 'da',
     'projects' => 'projekter',
     'project' => 'projekter/{slug}',
+    'services' => 'ydelser',
+    'service' => 'ydelser/{slug}',
 ];

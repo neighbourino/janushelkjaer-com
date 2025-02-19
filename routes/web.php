@@ -9,6 +9,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
 
 Route::get('/', function () {
 
@@ -24,6 +25,10 @@ Route::group([
     // projects
     Route::get(LaravelLocalization::transRoute('routes.projects'), [ProjectController::class, 'index'])->name('projects.index');
     Route::get(LaravelLocalization::transRoute('routes.project'), [ProjectController::class, 'show'])->name('projects.show');
+
+    // services
+    Route::get(LaravelLocalization::transRoute('routes.services'), [ServiceController::class, 'index'])->name('services.index');
+    Route::get(LaravelLocalization::transRoute('routes.service'), [ServiceController::class, 'show'])->name('services.show');
 
     Route::get('/{any?}', [PageController::class, 'show'])->where('any', '.*')->name('pages.show');
 });

@@ -56,7 +56,7 @@
             <flux:navbar.item href="{{ route('projects.index') }}">
                 {{ __('navigation.projects') }}
             </flux:navbar.item>
-            <flux:navbar.item href="#">
+            <flux:navbar.item href="{{ route('services.index') }}">
                 {{ __('navigation.services') }}
             </flux:navbar.item>
 
@@ -65,7 +65,7 @@
         <flux:spacer />
 
         <flux:navbar class="mr-4 space-x-3">
-            <flux:button variant="primary" icon="hand-raised">Work With Me</flux:button>
+            <flux:button variant="primary" icon="hand-raised" href="/en/contact">Work With Me</flux:button>
             {{-- <flux:button x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
                 aria-label="Toggle dark mode" />
             <flux:navbar.item icon="magnifying-glass" href="#" label="Search" /> --}}

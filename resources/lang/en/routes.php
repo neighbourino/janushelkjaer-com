@@ -8,4 +8,6 @@ return [
     'project' => 'projects/{slug}',
     'services' => 'services',
     'service' => 'services/{slug}',
+    'downloads' => 'downloads',
+    'download' => 'downloads/{slug}',
 ];

@@ -10,6 +10,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\DownloadController;
 
 Route::get('/', function () {
 
@@ -29,6 +30,10 @@ Route::group([
     // services
     Route::get(LaravelLocalization::transRoute('routes.services'), [ServiceController::class, 'index'])->name('services.index');
     Route::get(LaravelLocalization::transRoute('routes.service'), [ServiceController::class, 'show'])->name('services.show');
+
+    // downloads
+    Route::get(LaravelLocalization::transRoute('routes.downloads'), [DownloadController::class, 'index'])->name('downloads.index');
+    Route::get(LaravelLocalization::transRoute('routes.download'), [DownloadController::class, 'show'])->name('downloads.show');
 
     Route::get('/{any?}', [PageController::class, 'show'])->where('any', '.*')->name('pages.show');
 });

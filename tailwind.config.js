@@ -2,6 +2,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import colors from 'tailwindcss/colors';
+const plugin = require('tailwindcss/plugin');
 
 
 /** @type {import('tailwindcss').Config} */
@@ -35,10 +36,15 @@ export default {
                     '50%': { transform: 'rotateX(45deg) rotateY(45deg)' },
                     '75%': { transform: 'rotateX(-45deg) rotateY(45deg)' },
                     '100%': { transform: 'rotateX(45deg) rotateY(-45deg)' }
-                }
+                },
+                float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
             },
             animation: {
                 roll: 'roll 5s infinite',
+                float: 'float 3s ease-in-out infinite',
             },
             colors: {
                 // Re-assign Flux's gray of choice...
@@ -54,5 +60,18 @@ export default {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography,plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "animation-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        }
+      );
+    }),],
 };

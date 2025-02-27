@@ -43,7 +43,7 @@
                             {!! $data['hero_content'] !!}
                         </p>
                         <div class="mt-10 flex items-center gap-x-6">
-                            <flux:button variant="primary" icon="hand-raised">
+                            <flux:button variant="primary" icon="hand-raised" >
                                 {{ __('navigation.work_with_me') }}
                             </flux:button>
                             <flux:button>

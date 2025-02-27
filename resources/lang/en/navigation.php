@@ -7,6 +7,7 @@ return [
     'articles'     => 'Articles',
     'projects' => 'Projects',
     'services' => 'Services',
-    'work-with-me' => 'Work With Me',
+    'work_with_me' => 'Work With Me',
     'read_article' => 'Read Article',
+    'newsletter' => 'Newsletter',
 ];

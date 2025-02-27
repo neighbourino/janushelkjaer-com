@@ -7,6 +7,7 @@ return [
     'articles'     => 'Artikler',
     'projects' => 'Projekter',
     'services' => 'Ydelser',
-    'work-with-me' => 'Arbejd med mig',
+    'work_with_me' => 'Arbejd med mig',
     'read_article' => 'Læs artikel',
+    'newsletter' => 'Nyhedsbrev',
 ];

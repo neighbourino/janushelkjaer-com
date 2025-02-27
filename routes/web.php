@@ -11,47 +11,34 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DownloadController;
-
-Route::get('/', function () {
-
-    //dd(LaravelLocalization::getLocalizedURL('en'));
-    return response()->redirectTo('/en');
-});
-
-Route::group([
-    'prefix' => LaravelLocalization::setLocale()
-], function () {
-    Route::get(LaravelLocalization::transRoute('routes.articles'), [BlogController::class, 'index'])->name('articles.index');
-    Route::get(LaravelLocalization::transRoute('routes.article'), [BlogController::class, 'show'])->name('articles.show');
-    // projects
-    Route::get(LaravelLocalization::transRoute('routes.projects'), [ProjectController::class, 'index'])->name('projects.index');
-    Route::get(LaravelLocalization::transRoute('routes.project'), [ProjectController::class, 'show'])->name('projects.show');
-
-    // services
-    Route::get(LaravelLocalization::transRoute('routes.services'), [ServiceController::class, 'index'])->name('services.index');
-    Route::get(LaravelLocalization::transRoute('routes.service'), [ServiceController::class, 'show'])->name('services.show');
-
-    // downloads
-    Route::get(LaravelLocalization::transRoute('routes.downloads'), [DownloadController::class, 'index'])->name('downloads.index');
-    Route::get(LaravelLocalization::transRoute('routes.download'), [DownloadController::class, 'show'])->name('downloads.show');
-
-    Route::get('/{any?}', [PageController::class, 'show'])->where('any', '.*')->name('pages.show');
-});
-
-// Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize']], function () {
+use App\Http\Middleware\SetLocale;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
+use App\Http\Middleware\CheckTLD;
+use Illuminate\Support\Facades\Lang;
 
 
-//     // Route::get(LaravelLocalization::transRoute('routes.welcome'), function () {
-//     //     if (config('app.env') == 'production') {
-//     //         return view('home');
-//     //     }
-//     //     return view('welcome');
-//     // })->name('welcome');
+Route::group(
+    [
+        // 'prefix' => LaravelLocalization::setLocale(),
+        //'middleware' => ['localize']
+    ],
+    function () {
 
-//     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-//     Route::get('about', About::class)->name('pages.about');
-//     #Route::get('da/om', About::class)->name('pages.about');
+        Route::get(LaravelLocalization::transRoute('routes.articles'), [BlogController::class, 'index'])->name('routes.articles');
+        Route::get(LaravelLocalization::transRoute('routes.article'), [BlogController::class, 'show'])->name('routes.article');
+        // projects
+        Route::get(LaravelLocalization::transRoute('routes.projects'), [ProjectController::class, 'index'])->name('projects.index');
+        Route::get(LaravelLocalization::transRoute('routes.project'), [ProjectController::class, 'show'])->name('projects.show');
 
-//     Route::get(LaravelLocalization::transRoute('routes.articles'), IndexArticles::class)->name('articles.index');
-//     Route::get(LaravelLocalization::transRoute('routes.article'), ShowArticle::class)->name('articles.show');
-// });
+        // services
+        Route::get(LaravelLocalization::transRoute('routes.services'), [ServiceController::class, 'index'])->name('services.index');
+        Route::get(LaravelLocalization::transRoute('routes.service'), [ServiceController::class, 'show'])->name('services.show');
+
+        // downloads
+        Route::get(LaravelLocalization::transRoute('routes.downloads'), [DownloadController::class, 'index'])->name('downloads.index');
+        Route::get(LaravelLocalization::transRoute('routes.download'), [DownloadController::class, 'show'])->name('downloads.show');
+
+        Route::get('/{any?}', [PageController::class, 'show'])->where('any', '.*')->name('pages.show');
+    }
+);

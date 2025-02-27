@@ -19,6 +19,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'localeSessionRedirect'   => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
             'localeCookieRedirect'    => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
             'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
+            // 'setLocale'               => \App\Http\Middleware\SetLocale::class,
+            // 'CheckTLD'                => \App\Http\Middleware\CheckTLD::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

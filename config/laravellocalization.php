@@ -33,7 +33,7 @@ return [
         //'sn'          => ['name' => 'Shona',                  'script' => 'Latn', 'native' => 'chiShona', 'regional' => ''],
         //'co'          => ['name' => 'Corsican',               'script' => 'Latn', 'native' => 'corsu', 'regional' => ''],
         //'cy'          => ['name' => 'Welsh',                  'script' => 'Latn', 'native' => 'Cymraeg', 'regional' => 'cy_GB'],
-        'da'          => ['name' => 'Danish',                 'script' => 'Latn', 'native' => 'dansk', 'regional' => 'da_DK'],
+        'da'          => ['name' => 'Danish',                 'script' => 'Latn', 'native' => 'dansk', 'regional' => 'da_DK', 'subdomain' => 'dk'],
         //'se'          => ['name' => 'Northern Sami',          'script' => 'Latn', 'native' => 'davvisámegiella', 'regional' => 'se_NO'],
         //'de'          => ['name' => 'German',                 'script' => 'Latn', 'native' => 'Deutsch', 'regional' => 'de_DE'],
         //'luo'         => ['name' => 'Luo',                    'script' => 'Latn', 'native' => 'Dholuo', 'regional' => ''],
@@ -42,7 +42,7 @@ return [
         //'et'          => ['name' => 'Estonian',               'script' => 'Latn', 'native' => 'eesti', 'regional' => 'et_EE'],
         //'na'          => ['name' => 'Nauru',                  'script' => 'Latn', 'native' => 'Ekakairũ Naoero', 'regional' => ''],
         //'guz'         => ['name' => 'Ekegusii',               'script' => 'Latn', 'native' => 'Ekegusii', 'regional' => ''],
-        'en'          => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB'],
+        'en'          => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB', 'subdomain' => 'en'],
         //'en-AU'       => ['name' => 'Australian English',     'script' => 'Latn', 'native' => 'Australian English', 'regional' => 'en_AU'],
         //'en-GB'       => ['name' => 'British English',        'script' => 'Latn', 'native' => 'British English', 'regional' => 'en_GB'],
         //'en-CA'       => ['name' => 'Canadian English',       'script' => 'Latn', 'native' => 'Canadian English', 'regional' => 'en_CA'],
@@ -336,7 +336,14 @@ return [
     // If you want to use custom language URL segments like 'at' instead of 'de-AT', you can map them to allow the
     // LanguageNegotiator to assign the desired locales based on HTTP Accept Language Header. For example, if you want
     // to use 'at' instead of 'de-AT', you would map 'de-AT' to 'at' (ie. ['de-AT' => 'at']).
-    'localesMapping' => [],
+    // 'localesMapping' => [
+    //     env('HOSTNAME_EN', 'en.janushelkjaer.test') => 'en',
+    //     env('HOSTNAME_DK', 'dk.janushelkjaer.test') => 'da',
+    // ],
+    'localesMapping' => [
+        // 'en' => '',
+        // 'da' => '',
+    ],
 
     // Locale suffix for LC_TIME and LC_MONETARY
     // Defaults to most common ".UTF-8". Set to blank on Windows systems, change to ".utf8" on CentOS and similar.

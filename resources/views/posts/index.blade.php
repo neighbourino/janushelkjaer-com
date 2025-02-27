@@ -21,12 +21,9 @@
                         @php
                             $mediaItems = $post->getMedia('posts');
                             $publicFullUrl = isset($mediaItems[0]) ? $mediaItems[0]->getFullUrl() : '';
-
-                            #var_dump($mediaItems);
-
                         @endphp
                         <flux:card class="flex flex-col md:flex-row">
-                            <a href="{{ route('articles.show', $post->slug) }}"
+                            <a href="{{ route('routes.article', $post->slug) }}"
                                 class="block hover:opacity-75 transition-opacity duration-300 border-yellow-500 border-4 rounded shadow">
                                 <img src="{{ $publicFullUrl }}" alt="{{ $post->title }}"
                                     class="object-cover rounded shadow  h-48 w-64">
@@ -42,8 +39,9 @@
                                     {{ $post->excerpt }}
                                 </flux:subheading>
 
-                                <flux:button class="ml-auto mt-auto" icon="plus"
-                                    href="{{ route('articles.show', $post->slug) }}">Read Article
+                                <flux:button class="ml-auto mt-auto" icon-trailing="arrow-right"
+                                    href="{{ route('routes.article', $post->slug) }}">
+                                    {{ __('navigation.read_article') }}
                                 </flux:button>
                             </div>
                         </flux:card>

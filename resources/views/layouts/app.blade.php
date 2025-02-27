@@ -61,12 +61,8 @@
             name="{{ config('app.name', 'Laravel') }}" class="max-lg:!hidden hidden dark:flex" href="/" />
 
         <flux:navbar class="-mb-px max-lg:hidden">
-            {{-- <flux:navbar.item href="{{ route('pages.about') }}">
-                    {{ __('navigation.about') }}
-                </flux:navbar.item> --}}
             @php
                 $navLinks = c('nav.navlinks');
-                #dd($navLinks);
             @endphp
 
             @foreach ($navLinks as $navLink)
@@ -76,12 +72,13 @@
             @endforeach
 
 
-            <flux:navbar.item href="{{ route('articles.index') }}">{{ __('navigation.articles') }}
+            <flux:navbar.item href="{{ route('routes.articles') }}" :current="request()->route()->getName() == 'routes.articles' || request()->route()->getName() == 'articles.show'">
+                {{ __('navigation.articles') }}
             </flux:navbar.item>
-            <flux:navbar.item href="{{ route('projects.index') }}">
+            <flux:navbar.item href="{{ route('projects.index') }}" :current="request()->route()->getName() == 'projects.index' || request()->route()->getName() == 'projects.show'">
                 {{ __('navigation.projects') }}
             </flux:navbar.item>
-            <flux:navbar.item href="{{ route('services.index') }}">
+            <flux:navbar.item href="{{ route('services.index') }}" :current="request()->route()->getName() == 'services.index' || request()->route()->getName() == 'services.show'">
                 {{ __('navigation.services') }}
             </flux:navbar.item>
 
@@ -91,9 +88,7 @@
 
         <flux:navbar class="mr-4 space-x-3">
             <flux:button variant="primary" icon="hand-raised" href="/en/contact">Work With Me</flux:button>
-            {{-- <flux:button x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
-                aria-label="Toggle dark mode" />
-            <flux:navbar.item icon="magnifying-glass" href="#" label="Search" /> --}}
+           
 
             <flux:separator vertical class="my-2" />
             <flux:button icon="youtube" size="sm" href="https://www.youtube.com/janushelkjaer" target="_blank"
@@ -102,22 +97,56 @@
                 variant="subtle" />
             <flux:button icon="github" size="sm" href="https://github.com/janushelkjaer" target="_blank"
                 variant="subtle" />
-            <flux:separator vertical class="my-2" />
-            <flux:button size="sm"
-                href="{{ LaravelLocalization::getLocalizedURL(app()->currentLocale() == 'en' ? 'da' : 'en') }}"
+
+            @php
+                $currentHost = request()->getHttpHost();
+               #dd($currentHost);
+
+                $alternateHost = $currentHost == env('HOSTNAME_DA') ? env('HOSTNAME_EN') : env('HOSTNAME_DA');
+
+               # dd($alternateHost);
+
+                $currentLocale = LaravelLocalization::getCurrentLocale();
+                $alternateLocale = $currentLocale == 'en' ? 'da' : 'en';
+
+                #dd(request()->route('article'));
+                
+
+               
+
+                #dd(request()->route()->parameter('slug'));
+                $alternateUrl = LaravelLocalization::getURLFromRouteNameTranslated($alternateLocale, request()->route()->getName(), [
+                    'slug' => request()->route()->parameter('slug'),
+                ]);
+
+                #dd($alternateUrl);
+
+                #dd($alternateUrl);
+                #$alternateUrl = str_replace($currentHost, $alternateHost, $alternateUrl);
+               
+                $alternateUrl = str_replace($currentHost . '/'.$alternateLocale, $alternateHost, $alternateUrl);
+
+                #dd($alternateUrl);
+                
+                #dd(LaravelLocalization::getURLFromRouteNameTranslated('da', request()->route()->getName()));
+                #dd(request()->route()->getName());
+
+                #$alternateUrl = $currentLocale == 'en' ? env('HOSTNAME_DA') : env('HOSTNAME_EN');
+                #$alternateUrl = 'https://'.$alternateUrl;
+            @endphp
+            {{-- <flux:button size="sm"
+                href="{{ $alternateUrl }}"
                 variant="filled" class="uppercase text-xs">
-                {{ app()->currentLocale() == 'en' ? 'da' : 'en' }}
-            </flux:button>
-            {{-- <ul>
-                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li>
-                            <a rel="alternate" hreflang="{{ $localeCode }}"
-                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                {{ $properties['native'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul> --}}
+                {{ app()->getLocale() == 'en' ? 'da' : 'en' }}
+            </flux:button> --}}
+
+            <flux:button size="sm"
+                href="https://{{ $currentLocale == 'en' ? env('HOSTNAME_DA') : env('HOSTNAME_EN') }}"
+                variant="filled" class="uppercase text-xs">
+                {{ app()->getLocale() == 'en' ? 'da' : 'en' }}
+            </flux:button> 
+
+           
             {{-- <flux:button x-data x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle"
                     aria-label="Toggle dark mode" /> --}}
         </flux:navbar>

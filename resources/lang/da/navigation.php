@@ -8,4 +8,5 @@ return [
     'projects' => 'Projekter',
     'services' => 'Ydelser',
     'work-with-me' => 'Arbejd med mig',
+    'read_article' => 'Læs artikel',
 ];

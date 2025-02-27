@@ -3,7 +3,7 @@
 return [
     'articles' => 'artikler',
     'article' => 'artikler/{slug}',
-    'welcome' => 'da',
+    'welcome' => '/',
     'projects' => 'projekter',
     'project' => 'projekter/{slug}',
     'services' => 'ydelser',

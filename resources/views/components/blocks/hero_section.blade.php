@@ -3,11 +3,11 @@
 
     $style = 'hero_01';
 
-    $heroImage01 = asset('images/jh/drawing-board-02.png'); // https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80
-    $heroImage02 = asset('images/jh/on-the-floor-01.png'); // https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80
-    $heroImage03 = asset('images/jh/phone-03.png'); // https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80
-    $heroImage04 = asset('images/jh/video-shoot-02.png'); // https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80
-    $heroImage05 = asset('images/jh/design-monitor-01.png'); // https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80
+    $heroImage01 = asset('images/jh/vodcasting-01.png'); // https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80
+    $heroImage02 = asset('images/jh/working-on-computer-03.png'); // https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80
+    $heroImage03 = asset('images/jh/phone-02.png'); // https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80
+    $heroImage04 = asset('images/jh/teaching-01.png'); // https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80
+    $heroImage05 = asset('images/jh/drawing-board-01.png'); // https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80
 @endphp
 
 @if ($style == 'hero_01')
@@ -88,7 +88,7 @@
                             </div>
                             <div class="relative animate-float group animation-delay-150">
                                 <img src="{{ $heroImage05 }}" alt=""
-                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg group-hover:scale-105 transition-all duration-300">
+                                    class="aspect-[2/3] w-full rounded-xl bg-white object-cover shadow-lg group-hover:scale-105 transition-all duration-300">
                                 <div
                                     class="pointer-events-none absolute group-hover:ring-white group-hover:ring-4 transition-all duration-300 inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
                                 </div>

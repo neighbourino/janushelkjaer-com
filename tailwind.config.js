@@ -38,25 +38,48 @@ export default {
                     '100%': { transform: 'rotateX(45deg) rotateY(-45deg)' }
                 },
                 float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
             },
             animation: {
                 roll: 'roll 5s infinite',
                 float: 'float 3s ease-in-out infinite',
             },
             colors: {
-                // Re-assign Flux's gray of choice...
-                zinc: colors.stone,
+               // Re-assign Flux's gray of choice...
+                //zinc: colors.stone,
+            }
+            // colors: {
+            //     // Re-assign Flux's gray of choice...
+            //     zinc: colors.stone,
 
-                // Accent variables are defined in resources/css/app.css...
-                accent: {
-                    DEFAULT: 'var(--color-accent)',
-                    content: 'var(--color-accent-content)',
-                    foreground: 'var(--color-accent-foreground)',
-                },
-            },
+            //     // Accent variables are defined in resources/css/app.css...
+            //     // accent: {
+            //     //     DEFAULT: 'var(--color-accent)',
+            //     //     content: 'var(--color-accent-content)',
+            //     //     foreground: 'var(--color-accent-foreground)',
+            //     // },
+            //     accent: {
+            //         DEFAULT: 'var(--color-robbie-400)',
+            //         content: 'var(--color-robbie-600)',
+            //         foreground: 'var(--color-robbie-950)',
+            //     },
+            //     'robbie': {
+            //       '50': '#fdf9ed',
+            //       '100': '#f8edcd',
+            //       '200': '#f1d996',
+            //       '300': '#ebc368',
+            //       '400': '#e5a93a',
+            //       '500': '#dd8b23',
+            //       '600': '#c3691c',
+            //       '700': '#a24b1b',
+            //       '800': '#843c1c',
+            //       '900': '#6d321a',
+            //       '950': '#3e180a',
+            //   },
+
+            // },
         },
     },
 

@@ -13,15 +13,27 @@
 }
 
 @layer base {
-    :root {
-        --color-accent: var(--color-yellow-400);
-        --color-accent-content: var(--color-yellow-600);
-        --color-accent-foreground: var(--color-yellow-950);
+    /* :root {
+        --color-accent: #e5a93a;
+        --color-accent-content: #c3691c;
+        --color-accent-foreground: white;
     }
 
     .dark {
-        --color-accent: var(--color-yellow-400);
-        --color-accent-content: var(--color-yellow-400);
-        --color-accent-foreground: var(--color-yellow-950);
+        --color-accent: #e5a93a;
+        --color-accent-content: #c3691c;
+        --color-accent-foreground: white;
+    } */
+
+    /* :root {
+        --color-accent: #6bb0c5;
+        --color-accent-content: #367b93;
+        --color-accent-foreground: white;
     }
+
+    .dark {
+        --color-accent: #6bb0c5;
+        --color-accent-content: #367b93;
+        --color-accent-foreground: white;
+    } */
 }

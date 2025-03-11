@@ -7,7 +7,7 @@
 @endphp
 
 @if ($posts->count() > 0)
-    <div class="bg-white py-24 sm:py-32">
+    <div class="py-24 sm:py-32 relative">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">From the blog
@@ -23,7 +23,7 @@
                         $publicFullUrl = isset($mediaItems[0]) ? $mediaItems[0]->getFullUrl() : '';
 
                     @endphp
-                    <article class="flex flex-col items-start justify-between">
+                    {{-- <article class="flex flex-col items-start justify-between">
                         <div class="relative w-full">
                             <img src="{{ $publicFullUrl }}" alt=""
                                 class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
@@ -62,7 +62,24 @@
                                 </div>
                             </div>
                         </div>
-                    </article>
+                    </article> --}}
+                    <flux:card class="space-y-3 flex flex-col">
+                        <a href="{{ route('routes.article', $post->slug) }}" class="relative w-full hover:opacity-80 transition-opacity duration-300">
+                            <img src="{{ $publicFullUrl }}" alt=""
+                                class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+                            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+                        </a>
+                        <div class="flex-1">
+                            <span class="text-xs text-gray-500">{{ $post->created_at->format('M d, Y') }}</span>
+                            <flux:heading>{{ $post->title }}</flux:heading>
+                            <flux:subheading>{{ $post->excerpt }}</flux:subheading>
+                        </div>
+                        <div class="flex justify-end mt-auto align-bottom">
+                            <flux:button variant="primary" icon="arrow-right" :href="route('routes.article', $post->slug)">
+                                {{ __('navigation.read_article') }}
+                            </flux:button>
+                        </div>
+                    </flux:card>
                 @endforeach
                 <!-- More posts... -->
             </div>

@@ -7,9 +7,9 @@
 
             @foreach ($page->content as $key => $blockComponent)
                 <div class="py-1 w-full">
-                    <div>
+                    {{-- <div>
                         {{ $blockComponent['type'] }}
-                    </div>
+                    </div> --}}
                     <x-dynamic-component :component="'blocks.' . $blockComponent['type']" :info="$blockComponent" />
                 </div>
             @endforeach

@@ -32,6 +32,9 @@ class PostResource extends Resource
                 ...Properties::make($form),
                 RichContent::builder($form)->columnSpanFull(),
                 SpatieMediaLibraryFileUpload::make('featured_image')->collection('posts'),
+                // Forms\Components\TextInput::make('excerpt')
+                //     ->label('Excerpt')
+                //     ->maxLength(255),
             ]);
     }
 

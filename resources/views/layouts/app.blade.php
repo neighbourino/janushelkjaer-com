@@ -65,7 +65,7 @@
                 $navLinks = c('nav.navlinks');
             @endphp
 
-            @foreach ($navLinks as $navLink)
+            {{-- @foreach ($navLinks as $navLink)
                 <flux:navbar.item href="{{ $navLink['link'] }}">
                     {{ $navLink['name'] }}
                 </flux:navbar.item>
@@ -80,7 +80,7 @@
             </flux:navbar.item>
             <flux:navbar.item href="{{ route('services.index') }}" :current="request()->route()->getName() == 'services.index' || request()->route()->getName() == 'services.show'">
                 {{ __('navigation.services') }}
-            </flux:navbar.item>
+            </flux:navbar.item> --}}
 
         </flux:navbar>
 
@@ -172,16 +172,17 @@
 
 
         @if (1 == 1)
-            <footer class="bg-white mt-24">
+            <footer class="bg-zinc-50 mt-24 w-full rounded">
                 <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-                    <nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
+                    {{-- <flux:separator subtle="1"  /> --}}
+                    {{-- <nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
                         <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
                         <a href="#" class="text-gray-600 hover:text-gray-900">Blog</a>
                         <a href="#" class="text-gray-600 hover:text-gray-900">Jobs</a>
                         <a href="#" class="text-gray-600 hover:text-gray-900">Press</a>
                         <a href="#" class="text-gray-600 hover:text-gray-900">Accessibility</a>
                         <a href="#" class="text-gray-600 hover:text-gray-900">Partners</a>
-                    </nav>
+                    </nav> --}}
                     <div class="mt-16 flex justify-center gap-x-10">
                         <a href="#" class="text-gray-600 hover:text-gray-800">
                             <span class="sr-only">Facebook</span>

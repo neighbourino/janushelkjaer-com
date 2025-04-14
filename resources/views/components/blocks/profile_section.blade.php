@@ -6,7 +6,7 @@
 @endphp
 <div>
     <div class="py-1 w-full">
-        <div class="rounded-lg  shadow relative z-10 mt-32 bg-gray-900 pb-20 sm:mt-56 sm:pb-24 xl:pb-0">
+        <div class="rounded-lg  shadow relative z-10 mt-32 bg-zinc-800 pb-20 sm:mt-56 sm:pb-24 xl:pb-0">
             <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
                 <div class="absolute top-[calc(50%-36rem)] left-[calc(50%-19rem)] transform-gpu blur-3xl">
                     <div class="aspect-1097/1023 w-[68.5625rem] bg-linear-to-r from-[#ff4694] to-[#776fff] opacity-25"
@@ -43,8 +43,8 @@
                     @if ($data['profile_buttons'] && count($data['profile_buttons']) > 0)
                         <div class="mt-8">
                             @foreach ($data['profile_buttons'] as $button)
-                                <flux:button :href="$button['url']" :variant="$button['variant']">{{ $button['label'] }}
-                                </flux:button>
+                                <flux:button :href="$button['url']" :variant="$button['variant']"
+                                    icon-trailing="arrow-right">{{ $button['label'] }}</flux:button>
                             @endforeach
                         </div>
                     @endif
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="h-full flex flex-col items-center justify-center space-y-4">
+    {{-- <div class="h-full flex flex-col items-center justify-center space-y-4">
         <div class="flex flex-col items-center justify-center space-y-4 py-6">
 
 
@@ -112,4 +112,4 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}

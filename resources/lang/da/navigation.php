@@ -9,5 +9,6 @@ return [
     'services' => 'Ydelser',
     'work_with_me' => 'Arbejd med mig',
     'read_article' => 'Læs artikel',
+    'view_more' => 'Se mere',
     'newsletter' => 'Nyhedsbrev',
 ];

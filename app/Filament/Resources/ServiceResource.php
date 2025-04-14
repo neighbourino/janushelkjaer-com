@@ -34,6 +34,8 @@ class ServiceResource extends Resource
                 ...Properties::make($form),
                 RichContent::builder($form)->columnSpanFull(),
                 SpatieMediaLibraryFileUpload::make('featured_image')->collection('services'),
+                Forms\Components\TextInput::make('category'),
+                Forms\Components\RichEditor::make('short_description'),
             ]);
     }
 

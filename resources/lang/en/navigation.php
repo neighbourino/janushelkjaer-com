@@ -10,4 +10,5 @@ return [
     'work_with_me' => 'Work With Me',
     'read_article' => 'Read Article',
     'newsletter' => 'Newsletter',
+    'view_more' => 'View More',
 ];

@@ -9,7 +9,7 @@ class Post extends BaseModel
 {
     use HasTranslations;
 
-    protected $translatable = ['title', 'slug', 'content', 'short_description', 'seo', 'meta'];
+    protected $translatable = ['title', 'slug', 'content', 'short_description', 'seo', 'meta', 'body'];
 
     protected $dates = [
         'published_at'

@@ -37,3 +37,31 @@
         --color-accent-foreground: white;
     } */
 }
+
+mark {
+    padding: 15px 15px 5px 15px;
+    box-shadow: 0 0 1px 0px #999;
+    text-wrap: nowrap;
+    display: inline-block;
+    rotate: -1deg;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    /* background-color: oklch(0.852 0.199 91.936); */
+    background-color: oklch(0.141 0.005 285.823);
+    color: #fff;
+    font-size: 0.8em;
+    margin: 0 1px;
+}
+
+mark:nth-child(2n) {
+    rotate: 1deg;
+}
+
+mark:nth-child(3n) {
+    rotate: -2deg;
+}
+
+

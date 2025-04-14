@@ -35,6 +35,10 @@ class PostResource extends Resource
                 // Forms\Components\TextInput::make('excerpt')
                 //     ->label('Excerpt')
                 //     ->maxLength(255),
+
+                Forms\Components\MarkDownEditor::make('body')
+                    ->label('Body')
+                    ->columnSpanFull()
             ]);
     }
 
